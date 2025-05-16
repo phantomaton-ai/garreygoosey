@@ -1,3 +1,4 @@
+
 import fs from 'fs';
 import * as glob from 'glob';
 import { marked } from 'marked';
@@ -18,12 +19,18 @@ ${body}
 </body>
 </html>`
 
+const PREPROMPT = "((An amateurish cartoon line drawing in blue ink, drawn with a ballpoint pen on wrinkled lined notebook paper.))";
+const POSTPROMPT = "Garrey Goosey is a cartoon goose who wears jean shorts. Garrey Goosey has wild, blood-shot eyes. Garrey Goosey has teeth like a saw blade.";
+
 const commands = [metamagic(
   'image',
   async ({ file }, prompt) => {
     const output = path.join(SOURCES, file);
     if (!fs.existsSync(output)) {
-      await phantasia(prompt, { output, width: 960, height: 960 });
+      await phantasia(
+        [PREPROMPT, prompt, POSTPROMPT].join('\n\n'),
+        { output, width: 960, height: 960 }
+      );
     }
     return `![${prompt}](${file})\n`;
   },
