@@ -28,6 +28,6 @@ Garrey Goosey fishing on a little boat in the rain.
 
 ![Garrey Goosey fishing on a little boat in the rain.](fishing.png)
 
-Garrey Goosey taking a swing at golf and missing wildly; the ball remains on the tee.
+Garrey Goosey taking a swing at golf and missing wildly.
 
-![Garrey Goosey taking a swing at golf and missing wildly; the ball remains on the tee.](golf.png)
+![Garrey Goosey taking a swing at golf and missing wildly.](golf.png)
