@@ -10,7 +10,7 @@ const promptfile = path.join(
   'garreygoosey.md'
 );
 
-export default (request, options = {}) => phantomaton(
+export default (options) => phantomaton(
   fs.readFileSync(promptfile, 'utf-8'),
-  { install: [plugin({ ...options, request })] }
+  { install: [plugin(options)] }
 );
