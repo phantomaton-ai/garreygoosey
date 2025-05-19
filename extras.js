@@ -1,0 +1,1 @@
+const extras = ({ home, panel, topic }) => [];
