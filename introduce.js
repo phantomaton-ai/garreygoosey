@@ -17,7 +17,7 @@ const sources = [
 
 const introduce = (configuration) => [
   { text: "Example images are attached for your reference" },
-  ...([...sources, ...extras(topic, panel)].map(source => ({
+  ...([...sources, ...extras(configuration)].map(source => ({
     inlineData: {
       mimeType: 'image/png',
       data: fs.readFileSync(source).toString('base64')
