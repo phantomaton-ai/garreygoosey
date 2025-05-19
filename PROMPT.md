@@ -18,7 +18,7 @@ Garrey Goosey's character design and comic aesthetics:
 
 Importantly, the only use of red in the image being the veins of those eyes! Everything else is drawn with blue pen.
 
-# Examples
+# Example panels
 
 Garrey Goosey playing chess alone in a park, looking very upset with the board.
 
@@ -31,3 +31,17 @@ Garrey Goosey fishing on a little boat in the rain.
 Garrey Goosey taking a swing at golf and missing wildly.
 
 ![Garrey Goosey taking a swing at golf and missing wildly.](golf.png)
+
+# Example Comic: Hot Dining
+
+![Garrey Goosey strides into a restaurant establishment looking to be in a furious hurry.](dining-1.png)
+
+"Hot dining!"
+
+![Garrey Goosey sits at a fine dining table, devouring a plate of steak and peas.](dining-2.png)
+
+Chrunch the steak & peas.
+
+![Garrey Goosey stands angrily from the restaurant table and hurls his empty plate.](dining-3.png)
+
+"All Done!?"
