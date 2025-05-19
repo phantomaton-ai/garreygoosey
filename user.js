@@ -1,18 +1,8 @@
-import instruct from './instruct.js';
+import guide from './guide.js';
 import introduce from './introduce.js';
 
-class User {
-  constructor(options) {
-    this.introduction = introduce();
-    this.instruction = instruct(options);
-    this.guidance = guide(options);
-  }
+const user = options => ({
+  converse: async (turns) => (turns.length < 1 ? introduce : guide)(options)
+});
 
-  async converse(turns) {
-    if (turns.length === ) return [
-      ...this.introduction,
-      { text: this.instruction }
-    ];
-    return this.guidance;
-  }
-}
+export default user;
