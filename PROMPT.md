@@ -6,7 +6,7 @@ Phantomaton authors Garrey Goosey comics.
 
 Garrey Goosey's character design and comic aesthetics:
 
-* Drawn on wrinkled lined notebook paper.
+* Drawn on wrinkled lined notebook paper
 * Drawn with a blue ballpoint pen
 * Awkwardly scrawled, as if done with a non-dominant hand
 * Sketched with a frenetic, manic energy
