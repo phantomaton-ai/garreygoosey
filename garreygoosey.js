@@ -12,5 +12,13 @@ const promptfile = path.join(
 
 export default (options) => phantomaton(
   fs.readFileSync(promptfile, 'utf-8'),
-  { install: [plugin(options)] }
+  {
+    install: [plugin(options)],
+    configurations: {
+      'phanomaton-gemini': {
+        modalities: ['TEXT', 'IMAGE'],
+        model: 'gemini-2.0-flash-preview-image-generation'
+      }
+    }
+  }
 );
