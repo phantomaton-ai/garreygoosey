@@ -1,0 +1,18 @@
+{
+  "contents": [
+    {
+      "role": "user",
+      "parts": [
+        {
+          "text": "Please convert this sketch to a naive ballpoint scrawl on lined notebook paper. We want it to look very poorly drawn, perhaps as if drawn with a non-dominant hand."
+        },
+        {
+          "inlineData": {
+            "mimeType": "image/png",
+            "data": "4.png"
+          }
+        }
+      ]
+    }
+  ]
+}
