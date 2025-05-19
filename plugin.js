@@ -1,14 +1,19 @@
+import metamagic from 'metamagic';
 import conversations from 'phantomaton-conversations';
 import plugins from 'phantomaton-plugins';
 import execution from 'phantomaton-execution';
 
-import commands from './commands.js';
-import Starter from './starter.js';
-import User from './user.js';
+import introduce from './introduce.js';
 
-const commands = configuration => {
-  
-};
+class User {
+  constructor({ topic, panel }) {
+    
+  }
+
+  converse(turns) {
+    if (turns.length === 0) return introduce();
+  }
+}
 
 export default plugins.create(({ configuration }) => [
   plugins.define(conversations.user).as(new User(configuration)),
