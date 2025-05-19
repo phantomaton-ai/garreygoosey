@@ -20,8 +20,14 @@ Importantly, the only use of red in the image being the veins of those eyes! Eve
 
 # Examples
 
+Garrey Goosey playing chess alone in a park, looking very upset with the board.
+
 ![Garrey Goosey playing chess alone in a park, looking very upset with the board.](chess.png)
 
+Garrey Goosey fishing on a little boat in the rain.
+
 ![Garrey Goosey fishing on a little boat in the rain.](fishing.png)
+
+Garrey Goosey taking a swing at golf and missing wildly; the ball remains on the tee.
 
 ![Garrey Goosey taking a swing at golf and missing wildly; the ball remains on the tee.](golf.png)
