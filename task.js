@@ -1,6 +1,6 @@
-const task = ({ topic, panel }) => topic ? panel ?
+const instruction = ({ topic, panel }) => topic ? panel ?
   `Draw panel ${panel + 1}` :
   `Write a script for the topic: ${topic}` :
   'Come up with a new topic.';
 
-export default commands;
+export default instruction;
