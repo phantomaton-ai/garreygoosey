@@ -93,3 +93,8 @@ Garrey Goosey taking a swing at golf and missing wildly.
 ![Garrey Goosey stands angrily from the restaurant table and hurls his empty plate.](dining-3.png)
 
 "All Done!?"
+
+/install(module:phantomaton-conversations)
+/install(module:phantomaton-execution)
+/install(module:phantomaton-gemini)
+/install(module:phantomaton-system)
