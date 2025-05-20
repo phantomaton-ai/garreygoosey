@@ -31,3 +31,5 @@ const author = ({ topic }) => goal(
     }
   )
 });
+
+export default author;
