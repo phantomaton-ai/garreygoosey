@@ -15,15 +15,15 @@ const sources = [
   'dining-3.png'
 ].map(filename => path.join(dirname, filename));
 
-const introduce = (configuration) => [
+const introduce = (instruction, extras) => [
   { text: "Example images are attached for your reference" },
-  ...([...sources, ...extras(configuration)].map(source => ({
+  ...([...sources, ...extras].map(source => ({
     inlineData: {
       mimeType: 'image/png',
       data: fs.readFileSync(source).toString('base64')
     }
   }))),
-  { text: instruct(configuration) }
+  { text: instruction }
 ];
 
 export default introduce;
