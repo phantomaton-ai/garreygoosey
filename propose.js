@@ -16,3 +16,5 @@ const propose = configuration => goal(
     }  
   )
 });
+
+export default propose;
