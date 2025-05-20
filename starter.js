@@ -1,6 +1,7 @@
 import chalk from 'chalk';
 
-const starter = (options, evaluate) => async () => {
+// TODO move debug, delay, maximum into their own decorators
+const starter = (evaluate, options = {}) => async () => {
   const debug = options.debug;
   const delay = options.delay || 0.5;
   const maximum = options.maximum || 30;

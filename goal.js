@@ -11,7 +11,7 @@ const goal = (
 ) => ({
   user: user(instruction, guidance),
   commands: command ? [command] : [],
-  start: starter(configuration, evaluate)
+  start: starter(evaluate)
 });
 
 export default goal;

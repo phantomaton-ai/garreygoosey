@@ -22,7 +22,7 @@ const author = ({ topic }) => goal(
   `Your goal is to use the script command to propose a script for a comic on ${topic}.`,
   () => false, // TODO goal condition
   metamagic(
-    'script'
+    'script',
     (attributes, body) => console.log(body),
     {
       description: 'Propose a script for this comic',
@@ -30,6 +30,6 @@ const author = ({ topic }) => goal(
       example: { body: EXAMPLE }
     }
   )
-});
+);
 
 export default author;
