@@ -17,13 +17,13 @@ const EXAMPLE = `# Hot Dining
 "All Done!?"
 `;
 
-const author = ({ topic }) => goal(  
+const build = (topic, { peek, perform }) => goal(  
   `Write a script for the topic: ${topic}`,
   `Your goal is to use the script command to propose a script for a comic on ${topic}.`,
-  () => false, // TODO goal condition
+  peek,
   metamagic(
     'script',
-    (attributes, body) => console.log(body),
+    perform,
     {
       description: 'Propose a script for this comic',
       body: { description: 'The script for the comic' },
@@ -31,5 +31,7 @@ const author = ({ topic }) => goal(
     }
   )
 );
+
+const author = ({ topic }) => build(topic, watch(accept));
 
 export default author;

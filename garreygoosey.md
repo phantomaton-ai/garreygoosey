@@ -62,7 +62,7 @@ Garrey Goosey's catch phrases are:
 
 * "What a heck!"
 * "O kablooney"
-* "Boo golly"
+* "Boo golley"
 
 We prefer to use these phrases in contexts which make their meaning less clear.
 
