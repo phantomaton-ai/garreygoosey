@@ -107,8 +107,3 @@ Garrey Goosey taking a swing at golf and missing wildly.
 ![Garrey Goosey stumbles off a carousel horse looking ill and queasy.](carousel-3.png)
 
 "Boo golley..."
-
-/install(module:phantomaton-conversations)
-/install(module:phantomaton-execution)
-/install(module:phantomaton-gemini)
-/install(module:phantomaton-system)

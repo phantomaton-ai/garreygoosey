@@ -5,6 +5,13 @@ import { fileURLToPath } from 'url';
 
 import plugin from './plugin.js';
 
+const install = [
+  'phantomaton-conversations',
+  'phantomaton-execution',
+  'phantomaton-gemini',
+  'phantomaton-system'
+];
+
 const promptfile = path.join(
   path.dirname(fileURLToPath(import.meta.url)),
   'garreygoosey.md'
@@ -13,7 +20,7 @@ const promptfile = path.join(
 export default (options) => phantomaton(
   fs.readFileSync(promptfile, 'utf-8'),
   {
-    install: [plugin(options)],
+    install: [...install, plugin(options)],
     configurations: {
       'phanomaton-gemini': {
         modalities: ['TEXT', 'IMAGE'],
