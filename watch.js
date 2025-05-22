@@ -4,6 +4,7 @@ const watch = fn => {
   const perform = (...args) => {
     try {
       value = fn(...args);
+      return value;
     } catch (e) {
       return `Error: ${e.message}`;
     }

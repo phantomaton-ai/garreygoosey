@@ -1,6 +1,7 @@
 import metamagic from 'metamagic';
 
 import goal from './goal.js';
+import watch from './watch.js';
 
 const EXAMPLE = `# Hot Dining
 
@@ -17,6 +18,24 @@ const EXAMPLE = `# Hot Dining
 "All Done!?"
 `;
 
+const title = text => /^# [0-9a-z ]+$/.test(text);
+const image = text => /^\!\[.*?\]\((.*?)\)$/.test(text);
+const caption = text => 
+  /^\*[A-Za-z ]+\*$/.test(text) || /^\"[A-Za-z ]+\"$/.test(text);
+const tests = [title, image, caption, image, caption, image, caption];
+
+const accept = (attributes, body) => {
+  const lines = body.split('\n').map(line => line.trim());
+  const nonempty = lines.filter(line => line.length > 0);
+  if (
+    nonempty.length === tests.length &&
+    tests.every((test, i) => test(nonempty[i]))
+  ) {
+    return nonempty.join('\n\n');
+  }
+  throw Error(`Expected script format to match example:\n\n${EXAMPLE}`);
+};
+
 const build = (topic, { peek, perform }) => goal(  
   `Write a script for the topic: ${topic}`,
   `Your goal is to use the script command to propose a script for a comic on ${topic}.`,
@@ -26,8 +45,9 @@ const build = (topic, { peek, perform }) => goal(
     perform,
     {
       description: 'Propose a script for this comic',
+      attributes: {},
       body: { description: 'The script for the comic' },
-      example: { body: EXAMPLE }
+      example: { attributes: {}, body: EXAMPLE }
     }
   )
 );
