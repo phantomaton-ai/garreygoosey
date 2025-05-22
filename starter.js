@@ -17,16 +17,16 @@ const starter = (evaluate, options = {}) => async conversation => {
       console.log(chalk.magenta(conversation.user.preamble));
     }
 
-    const result = this.evaluate(conversation);
+    const result = evaluate(conversation);
     if (result) {
       return result;
     }
 
-    await new Promise(res => setTimeout(res, this.delay * 1000));
+    await new Promise(res => setTimeout(res, delay * 1000));
     rounds += 1;
   }
 
-  throw new Error(`Exceeded maximum tries of ${this.maximum}`);
+  throw new Error(`Exceeded maximum tries of ${maximum}`);
 };
 
 export default starter;
