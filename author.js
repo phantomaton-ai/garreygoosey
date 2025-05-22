@@ -23,7 +23,7 @@ const image = text => /^\!\[.*?\]\((.*?)\)$/.test(text);
 const caption = text => /^\*.+\*$/.test(text) || /^\".+\"$/.test(text);
 const tests = [title, image, caption, image, caption, image, caption];
 
-const accept = (attributes, body) => {
+const accept = ({ topic }, body) => {
   const lines = body.split('\n').map(line => line.trim());
   const nonempty = lines.filter(line => line.length > 0);
 
@@ -40,23 +40,25 @@ const accept = (attributes, body) => {
   return nonempty.join('\n\n');
 };
 
-const build = (topic, { peek, perform }) => goal(  
-  `Write a script for the topic: ${topic}`,
-  `Your goal is to use the script command to propose a script for a comic on ${topic}.`,
+const build = ({ peek, perform }) => goal(  
+  `Write a script for a new topic.`,
+  `Your goal is to use the script command to propose a script for a comic with a new topic.`,
   peek,
   metamagic(
     'script',
     perform,
     {
       description: 'Propose a script for this comic',
-      attributes: {},
+      attributes: {
+        topic: { description: 'The topic for this comic (single-word, lower-case)' }
+      },
       body: { description: 'The script for the comic' },
-      example: { attributes: {}, body: EXAMPLE }
+      example: { attributes: { topic: 'dining' }, body: EXAMPLE }
     }
   )
 );
 
-const author = ({ topic }) => build(topic, watch(accept));
+const author = () => build(watch(accept));
 
 export default author;
 
