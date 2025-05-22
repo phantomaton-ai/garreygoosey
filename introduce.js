@@ -10,7 +10,7 @@ const sources = [
   'dining-1.png',
   'dining-2.png',
   'dining-3.png'
-].map(filename => path.join(dirname, filename));
+].map(filename => path.join(dirname, 'examples', filename));
 
 const introduce = (instruction, extras) => [
   { text: "Example images are attached for your reference" },
