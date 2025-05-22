@@ -19,7 +19,7 @@ export default (options) => phantomaton(
        plugin(options)
     ],
     configurations: {
-      'phanomaton-gemini': {
+      'phantomaton-gemini': {
         modalities: ['TEXT', 'IMAGE'],
         model: 'gemini-2.0-flash-preview-image-generation'
       }
