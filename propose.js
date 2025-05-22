@@ -17,7 +17,7 @@ const build = ({ peek, perform }) => goal(
   metamagic('topic', perform, {
     description: 'Propose a topic for this comic',
     body: { description: 'The topic for the comic (one single word, all lower-case)' },
-    example: { body: 'dining' }
+    example: { attributes: {}, body: 'dining' }
   })
 );
 

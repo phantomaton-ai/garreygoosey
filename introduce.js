@@ -16,6 +16,7 @@ const sources = [
 ].map(filename => path.join(dirname, 'examples', filename));
 
 const introduce = (instruction, extras) => [
+  { text: fs.readFileSync('garreygoosey.md', 'utf-8') },
   { text: "Example images are attached for your reference" },
   ...([...sources, ...extras].map(source => ({
     inlineData: {

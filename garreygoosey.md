@@ -20,7 +20,7 @@ Garrey Goosey's character design and comic aesthetics:
 
 Importantly, the only use of red in the image being the veins of those eyes! Everything else is drawn with blue pen.
 
-# Comic style
+## Comic style
 
 Garrey Goosey's story is told in:
 
@@ -45,6 +45,15 @@ Garrey Goosey's comics use language distinctively:
   * Around four words per caption on average
   * At least one word captioning each panel
 
+## Comic format
+
+Each comic is written in Markdown and must consist of seven non-empty lines:
+
+* A title header, with a top-level `#`, e.g. `# Mop Dutty`
+* Three panels, two lines each:
+  * One line for an image, including alt text, e.g. `![Garrey Goosey mops up](mop-1.png)`
+  * One line for each caption (following its associated image), e.g. `*Gets the mopping.*`
+
 ## Narrative themes
 
 Garrey Goosey's comics center around certain themes:
@@ -68,15 +77,9 @@ We prefer to use these phrases in contexts which make their meaning less clear.
 
 # Example panels
 
-Garrey Goosey playing chess alone in a park, looking very upset with the board.
-
 ![Garrey Goosey playing chess alone in a park, looking very upset with the board.](chess.png)
 
-Garrey Goosey fishing on a little boat in the rain.
-
 ![Garrey Goosey fishing on a little boat in the rain.](fishing.png)
-
-Garrey Goosey taking a swing at golf and missing wildly.
 
 ![Garrey Goosey taking a swing at golf and missing wildly.](golf.png)
 
