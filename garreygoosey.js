@@ -13,13 +13,16 @@ export default (options) => phantomaton(
   {
     install: [
       'phantomaton-conversations',
-      'phantomaton-execution',
+      ...(
+        options.topic && options.panel ?
+        [] : ['phantomaton-execution']
+      ),
       'phantomaton-gemini',
       'phantomaton-system',
        plugin(options)
     ],
     configurations: {
-      'phantomaton-gemini': (options.topic && options.paneel) ? {
+      'phantomaton-gemini': (options.topic && options.panel) ? {
         modalities: ['TEXT', 'IMAGE'],
         model: 'gemini-2.0-flash-preview-image-generation',
         systemless: true
