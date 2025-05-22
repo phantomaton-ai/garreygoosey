@@ -9,7 +9,10 @@ const sources = [
   'golf.png',
   'dining-1.png',
   'dining-2.png',
-  'dining-3.png'
+  'dining-3.png',
+  'carousel-1.png',
+  'carousel-2.png',
+  'carousel-3.png'
 ].map(filename => path.join(dirname, 'examples', filename));
 
 const introduce = (instruction, extras) => [
