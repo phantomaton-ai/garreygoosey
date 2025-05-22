@@ -18,22 +18,26 @@ const EXAMPLE = `# Hot Dining
 "All Done!?"
 `;
 
-const title = text => /^# [0-9a-z ]+$/.test(text);
+const title = text => /^# [A-Za-z ]+$/.test(text);
 const image = text => /^\!\[.*?\]\((.*?)\)$/.test(text);
-const caption = text => 
-  /^\*[A-Za-z ]+\*$/.test(text) || /^\"[A-Za-z ]+\"$/.test(text);
+const caption = text => /^\*.+\*$/.test(text) || /^\".+\"$/.test(text);
 const tests = [title, image, caption, image, caption, image, caption];
 
 const accept = (attributes, body) => {
   const lines = body.split('\n').map(line => line.trim());
   const nonempty = lines.filter(line => line.length > 0);
-  if (
-    nonempty.length === tests.length &&
-    tests.every((test, i) => test(nonempty[i]))
-  ) {
-    return nonempty.join('\n\n');
+
+  if (nonempty.length !== tests.length) {
+    throw new Error(`Expected ${test.length} non-empty lines.`);
   }
-  throw Error(`Expected script format to match example:\n\n${EXAMPLE}`);
+
+  tests.forEach((test, i) => {
+    if (!test(nonempty[i])) {
+      throw new Error(`Failed to parse line ${i}: ${nonempty[i]}`);
+    }
+  });
+
+  return nonempty.join('\n\n');
 };
 
 const build = (topic, { peek, perform }) => goal(  
@@ -55,3 +59,4 @@ const build = (topic, { peek, perform }) => goal(
 const author = ({ topic }) => build(topic, watch(accept));
 
 export default author;
+
