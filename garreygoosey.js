@@ -21,7 +21,8 @@ export default (options) => phantomaton(
     configurations: {
       'phantomaton-gemini': {
         modalities: ['TEXT', 'IMAGE'],
-        model: 'gemini-2.0-flash-preview-image-generation'
+        model: 'gemini-2.0-flash-preview-image-generation',
+        systemless: true
       }
     }
   }

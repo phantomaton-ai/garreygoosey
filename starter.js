@@ -12,7 +12,7 @@ const starter = (evaluate, options = {}) => async conversation => {
     const { message, reply } = await conversation.advance();
     conversation.user.preamble = conversation.assistant.preamble;
     
-    if (this.debug) {
+    if (debug) {
       console.log(chalk.green(reply));
       console.log(chalk.magenta(conversation.user.preamble));
     }
