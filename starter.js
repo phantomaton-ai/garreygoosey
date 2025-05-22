@@ -8,11 +8,11 @@ const starter = (evaluate, options = {}) => async conversation => {
   let rounds = 0;
 
   while (rounds < maximum) {
+    console.log(chalk.white(JSON.stringify(await conversation.user.converse(conversation.turns), null, 2)));
     const { message, reply } = await conversation.advance();
     conversation.user.preamble = conversation.assistant.preamble;
     
     if (this.debug) {
-      console.log(chalk.white(message));
       console.log(chalk.green(reply));
       console.log(chalk.magenta(conversation.user.preamble));
     }
