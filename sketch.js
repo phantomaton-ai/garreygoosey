@@ -16,9 +16,9 @@ See the treat snacks.
 
 "O kablooney"`;
 
-const sketch = ({ topic, panel }) => goal(
-  introduce(`Draw panel ${panel} of the following comic (emphasizing the red veins in Garrey's bloodshot eyes):\n\n${COMIC}`, []), // TODO images too
-  `Your goal is to generate an image for panel ${panel} of the current script.`,
+const sketch = ({ topic, panel }, home) => goal(
+  introduce(`Draw panel ${panel} of the following comic:\n\n${home.script(topic)}`, []), // TODO images too
+  "Good start. Now emphasize Garrey Goosey's bloodshot eyes; we want red ballpoint pen for the veins...",
   () => false // TODO goal condition
 );
 

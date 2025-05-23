@@ -1,3 +1,4 @@
+import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -44,4 +45,4 @@ class Home {
   }
 }
 
-export default Home;
+export default root => new Home(root);

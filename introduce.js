@@ -13,7 +13,7 @@ const sources = [
   'carousel-1.png',
   'carousel-2.png',
   'carousel-3.png'
-].map(filename => path.join(dirname, 'examples', filename));
+].map(filename => path.join(dirname, filename));
 
 const introduce = (instruction, extras) => [
   { text: fs.readFileSync('garreygoosey.md', 'utf-8') },
