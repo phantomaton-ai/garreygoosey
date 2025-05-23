@@ -20,7 +20,7 @@ Chrunch some steak & peas.
 
 const title = text => /^# [A-Za-z ]+$/.test(text);
 const image = text => /^\!\[.*?\]\((.*?)\)$/.test(text);
-const caption = text => /^[A-Z]\*.+\*$/.test(text) || /^\".+\"$/.test(text);
+const caption = text => /^[A-Z].+$/.test(text) || /^\".+\"$/.test(text);
 const tests = [title, image, caption, image, caption, image, caption];
 
 const accept = ({ topic }, body) => {
