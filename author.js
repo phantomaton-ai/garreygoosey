@@ -21,23 +21,42 @@ Chrunch some steak & peas.
 const title = text => /^# [A-Za-z ]+$/.test(text);
 const image = text => /^\!\[.*?\]\((.*?)\)$/.test(text);
 const caption = text => /^[A-Z].+$/.test(text) || /^\".+\"$/.test(text);
-const tests = [title, image, caption, image, caption, image, caption];
+const tests = { title, image, caption };
+const panel = ['image', 'caption'];
+const validations = ['title', ...panel, ...panel, ...panel];
 
 const accept = ({ topic }, body) => {
-  const lines = body.split('\n').map(line => line.trim());
-  const nonempty = lines.filter(line => line.length > 0);
+  const lines = body.split('\n').map(line => line.trim()).filter(line => line.length > 0);
 
-  if (nonempty.length !== tests.length) {
-    throw new Error(`Expected ${test.length} non-empty lines.`);
+  if (lines.length !== validations.length) {
+    throw new Error(`Expected ${validations.length} non-empty lines.`);
+  }
+  
+  if (!(/^[a-z]+$/.test(topic))) {
+    throw new Error(`Expected single-word topic, all lower-case, but got: ${topic}`);
   }
 
-  tests.forEach((test, i) => {
-    if (!test(nonempty[i])) {
-      throw new Error(`Failed to parse line ${i}: ${nonempty[i]}`);
+  validations.forEach((type, i) => {
+    console.log(type);
+    const test = tests[type];
+    if (!test(lines[i])) {
+      throw new Error([
+        `Expected ${type} line ${i + 1}, e.g.:`,
+        EXAMPLE.split('\n').filter(l => l.trim().length > 0)[i],
+        'Instead got:',
+        lines[i]
+      ].join('\n'));      
+    }
+    if (type === 'image') { // Validate filenames too...
+      const n = (i + 1) / 2; // Panel number 1-3
+      const expected = `(${topic}-${n}.png)`;
+      if (!lines[i].endsWith(expected)) {
+        throw new Error(`Expected line ${i + 1} to end with: ${expected}`);
+      }
     }
   });
 
-  return nonempty.join('\n\n');
+  return lines.join('\n\n');
 };
 
 const build = ({ peek, perform }) => goal(  
