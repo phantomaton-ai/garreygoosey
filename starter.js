@@ -3,7 +3,7 @@ import chalk from 'chalk';
 // TODO move debug, delay, maximum into their own decorators
 const starter = (evaluate, options = {}) => async conversation => {
   const debug = true; // options.debug;
-  const delay = options.delay || 60.0;
+  const delay = options.delay || 20.0;
   const maximum = options.maximum || 30;
   let rounds = 0;
 

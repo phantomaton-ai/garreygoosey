@@ -61,7 +61,7 @@ const accept = ({ topic }, body) => {
 
 const build = ({ peek, perform }) => goal(  
   `Write a script for a new topic.`,
-  `Your goal is to use the script command to propose a script for a comic with a new topic.`,
+  [`Your goal is to use the script command to propose a script for a comic with a new topic.`],
   peek,
   metamagic(
     'script',
