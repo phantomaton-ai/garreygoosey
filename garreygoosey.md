@@ -27,8 +27,9 @@ Garrey Goosey's story is told in:
 * Three-panel comics; each panel has:
   * A caption, which is either:
     * "Dialog, appearing in quotes."
-    * *Narration, appearing in italics.*
-  * Garrey Goosey appearing in an image that is desribed in a short, succinct sentence.
+    * Narration, appearing unquoted.
+  * Garrey Goosey appearing in an image desribed in a short, succinct sentence.
+    * The description goes in the alt text
 
 We like a mix of dialog and narration to appear in each comic.
 
@@ -77,50 +78,50 @@ We prefer to use these phrases in contexts which make their meaning less clear.
 
 # Example panels
 
-![Garrey Goosey playing chess alone in a park, looking very upset with the board.](examples/chess.png)
+![Garrey Goosey playing chess alone in a park, looking very upset with the board.](chess.png)
 
-![Garrey Goosey fishing on a little boat in the rain.](examples/fishing.png)
+![Garrey Goosey fishing on a little boat in the rain.](fishing.png)
 
-![Garrey Goosey taking a swing at golf and missing wildly.](examples/golf.png)
+![Garrey Goosey taking a swing at golf and missing wildly.](golf.png)
 
 # Example comic: Hot Dining
 
-![Garrey Goosey strides into a restaurant establishment looking to be in a furious hurry.](examples/dining-1.png)
+![Garrey Goosey strides into a restaurant establishment looking to be in a furious hurry.](dining-1.png)
 
 "Hot dining!"
 
-![Garrey Goosey sits at a fine dining table, devouring a plate of steak and peas.](examples/dining-2.png)
+![Garrey Goosey sits at a fine dining table, devouring a plate of steak and peas.](dining-2.png)
 
 Chrunch some steak & peas.
 
-![Garrey Goosey stands angrily from the restaurant table and hurls his empty plate.](examples/dining-3.png)
+![Garrey Goosey stands angrily from the restaurant table and hurls his empty plate.](dining-3.png)
 
 "All Done!?"
 
 # Example comic: Carousel Around
 
-![Garrey Goosey climbs onto a carousel horse with determination.](examples/carousel-1.png)
+![Garrey Goosey climbs onto a carousel horse with determination.](carousel-1.png)
 
 Round and round a goes.
 
-![Garrey Goosey rides a carousel horse, looking distressed and ruffled.](examples/carousel-2.png)
+![Garrey Goosey rides a carousel horse, looking distressed and ruffled.](carousel-2.png)
 
 "Up and Down!?"
 
-![Garrey Goosey stumbles off a carousel horse looking ill and queasy.](examples/carousel-3.png)
+![Garrey Goosey stumbles off a carousel horse looking ill and queasy.](carousel-3.png)
 
 "Boo golley..."
 
 # Example comic: Green Hassle
 
-![Garrey Goosey pours water on a potted plant.](examples/greenery-1.png)
+![Garrey Goosey pours water on a potted plant.](greenery-1.png)
 
 Water a potted plant.
 
-![Garrey Goosey looks angry with the potted plant.](examples/greenery-2.png)
+![Garrey Goosey looks angry with the potted plant.](greenery-2.png)
 
 "No drinking!?"
 
-![Garrey Goosey angrily kicks over the potted plant.](examples/greenery-3.png)
+![Garrey Goosey angrily kicks over the potted plant.](greenery-3.png)
 
 "Drat greenery!"

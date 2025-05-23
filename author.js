@@ -11,7 +11,7 @@ const EXAMPLE = `# Hot Dining
 
 ![Garrey Goosey sits at a fine dining table, devouring a plate of steak and peas.](dining-2.png)
 
-*Chrunch some steak & peas.*
+Chrunch some steak & peas.
 
 ![Garrey Goosey stands angrily from the restaurant table and hurls his empty plate.](dining-3.png)
 
@@ -20,7 +20,7 @@ const EXAMPLE = `# Hot Dining
 
 const title = text => /^# [A-Za-z ]+$/.test(text);
 const image = text => /^\!\[.*?\]\((.*?)\)$/.test(text);
-const caption = text => /^\*.+\*$/.test(text) || /^\".+\"$/.test(text);
+const caption = text => /^[A-Z]\*.+\*$/.test(text) || /^\".+\"$/.test(text);
 const tests = [title, image, caption, image, caption, image, caption];
 
 const accept = ({ topic }, body) => {
