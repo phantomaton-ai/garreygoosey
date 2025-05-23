@@ -2,22 +2,22 @@ import goal from './goal.js';
 import introduce from './introduce.js';
 
 // TODO: Load from home
-const COMIC = `# Wet Sock
+const COMIC = `# Vending Gone
 
-![Garrey Goosey shoves a single sock into a washing machine.](laundry-1.png)
+![Garrey Goosey stands before a vending machine, beak close to the glass.](vending-1.png)
 
-*One sock go in.*
+See the treat snacks.
 
-![Garrey Goosey watches the washing machine spin, looking confused.](laundry-2.png)
+![Garrey Goosey presses many buttons on the vending machine at once, sweat drops flying.](vending-2.png)
 
-"Round and round it spinneth!"
+"Push wrong!?"
 
-![Garrey Goosey pulls a wet sock from the washing machine, looking frustrated.](laundry-3.png)
+![Garrey Goosey stares into the empty vending machine slot with wide-eyed desperation.](vending-3.png)
 
-"O kablooney! Wet!"`;
+"O kablooney"`;
 
 const sketch = ({ topic, panel }) => goal(
-  introduce(`Draw panel ${panel} of the following comic:\n\n${COMIC}`, []), // TODO images too
+  introduce(`Draw panel ${panel} of the following comic (emphasizing the red veins in Garrey's bloodshot eyes):\n\n${COMIC}`, []), // TODO images too
   `Your goal is to generate an image for panel ${panel} of the current script.`,
   () => false // TODO goal condition
 );
