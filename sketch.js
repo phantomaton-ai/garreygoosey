@@ -26,13 +26,28 @@ const suggestions = [
   'Wonderful. Please also give that wild path of feathers on top of Garrey\'s head a bit more wildness.'
 ];
 
+const prefix = '![Generated image](';
+const suffix = ')';
+const maybe = array =>
+  array.length > 0 ? array[array.length - 1] : undefined;
+const output = conversation => maybe(conversation.turns.flatMap(
+  ({ reply }) => reply.split('\n').filter(
+    line => line.startsWith(prefix) && line.endsWith(suffix)
+  ).map(line => line.slice(prefix.length, -suffix.length))
+));
+const outcome = home => conversation => {
+  const image = output(conversation);
+  // TODO copy panel to home?
+  return image;
+};
+
 const sketch = ({ topic, panel }, home) => goal(
   introduce(
     `${PREFIX}Draw panel ${panel} of the following comic:\n\n${home.script(topic)}`,
     home.images(topic).filter((b, i) => panel > (i + 1))
   ),
   suggestions,
-  () => false // TODO goal condition
+  outcome(home)
 );
 
 export default sketch;

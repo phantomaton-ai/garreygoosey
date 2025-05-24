@@ -27,7 +27,9 @@ class Home {
   }
 
   sketch(topic, panel, image) {
-    // TODO
+    const dir = path.join(this.root, topic);
+    const file = path.join(dir, `${topic}-${panel}.png`);
+    fs.copyFileSync(image, file);
   }
 
   script(topic) {
