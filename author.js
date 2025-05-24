@@ -25,7 +25,7 @@ const tests = { title, image, caption };
 const panel = ['image', 'caption'];
 const validations = ['title', ...panel, ...panel, ...panel];
 
-const accept = ({ topic }, body) => {
+const accept = home => ({ topic }, body) => {
   const lines = body.split('\n').map(line => line.trim()).filter(line => line.length > 0);
 
   if (lines.length !== validations.length) {
@@ -54,8 +54,11 @@ const accept = ({ topic }, body) => {
       }
     }
   });
+  
+  const script = lines.join('\n\n');
+  home.draft(topic, script);
 
-  return lines.join('\n\n');
+  return script;
 };
 
 const build = ({ peek, perform }) => goal(
@@ -76,7 +79,7 @@ const build = ({ peek, perform }) => goal(
   )
 );
 
-const author = (options, home) => build(watch(accept));
+const author = (options, home) => build(watch(accept(home)));
 
 export default author;
 
