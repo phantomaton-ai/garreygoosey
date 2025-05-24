@@ -67,9 +67,9 @@ const build = ({ peek, perform }) => goal(
     perform,
     {
       description: 'Propose a script for this comic',
-      attributes: {
-        topic: { description: 'The topic for this comic (single-word, lower-case)' }
-      },
+      attributes: { topic: { description:
+        'The topic for this comic (single-word, lower-case)'
+      } },
       body: { description: 'The script for the comic' },
       example: { attributes: { topic: 'dining' }, body: EXAMPLE }
     }
