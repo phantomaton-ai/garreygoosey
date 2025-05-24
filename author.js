@@ -37,7 +37,6 @@ const accept = ({ topic }, body) => {
   }
 
   validations.forEach((type, i) => {
-    console.log(type);
     const test = tests[type];
     if (!test(lines[i])) {
       throw new Error([
