@@ -35,11 +35,6 @@ const output = conversation => maybe(conversation.turns.flatMap(
     line => line.startsWith(prefix) && line.endsWith(suffix)
   ).map(line => line.slice(prefix.length, -suffix.length))
 ));
-const outcome = home => conversation => {
-  const image = output(conversation);
-  // TODO copy panel to home?
-  return image;
-};
 
 const sketch = ({ topic, panel }, home) => goal(
   introduce(
@@ -47,7 +42,11 @@ const sketch = ({ topic, panel }, home) => goal(
     home.images(topic).filter((b, i) => panel > (i + 1))
   ),
   suggestions,
-  outcome(home)
+  conversation => {
+    const image = output(conversation);
+    home.sketch(topic, panel, image)
+    return image;
+  }
 );
 
 export default sketch;
