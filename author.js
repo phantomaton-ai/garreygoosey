@@ -36,6 +36,10 @@ const accept = home => ({ topic }, body) => {
     throw new Error(`Expected single-word topic, all lower-case, but got: ${topic}`);
   }
 
+  if (home.drafts().includes(topic)) {
+    throw new Error(`Topic ${topic} has already been used`);
+  }
+
   validations.forEach((type, i) => {
     const test = tests[type];
     if (!test(lines[i])) {
@@ -61,8 +65,12 @@ const accept = home => ({ topic }, body) => {
   return script;
 };
 
-const build = ({ peek, perform }) => goal(
-  `Write a script for a new topic.`,
+const build = ({ peek, perform }, home) => goal(
+  [
+    'Write a script for a new topic.',
+    'Please avoid reusing any pre-existing topic from the list:',
+    home.drafts().map(topic => `* ${topic}`).join('\n')
+  ].join('\n\n'),
   [`Your goal is to use the script command to propose a script for a comic with a new topic.`],
   peek,
   metamagic(
@@ -79,7 +87,7 @@ const build = ({ peek, perform }) => goal(
   )
 );
 
-const author = (options, home) => build(watch(accept(home)));
+const author = (options, home) => build(watch(accept(home)), home);
 
 export default author;
 

@@ -20,6 +20,12 @@ class Home {
     fs.writeFileSync(file, script, 'utf-8');
   }
 
+  drafts() {
+    const filenames = fs.readdirSync(this.root);
+    const topics = filenames.filter(filename => /^[a-z]+$/.test(filename));
+    return topics;
+  }
+
   sketch(topic, panel, image) {
     // TODO
   }
