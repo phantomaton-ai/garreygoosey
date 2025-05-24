@@ -1,17 +1,10 @@
-import conversations from 'phantomaton-conversations';
 import plugins from 'phantomaton-plugins';
-import execution from 'phantomaton-execution';
 
+import decorators from './decorators.js';
+import extensions from './extensions.js';
 import subtask from './subtask.js';
 
-const extensions = ({ user, commands, start }) => [
-  plugins.define(conversations.user).as(user),
-  plugins.define(execution.command).as(commands),
-  plugins.define(plugins.start).with(
-    conversations.conversation
-  ).as((c) => () => start(c()))  
-];
-
-export default plugins.create(
-  ({ configuration }) => extensions(subtask(configuration))
-);
+export default plugins.create(({ configuration }) => [
+  ...extensions(subtask(configuration)),
+  ...decorators(configuration)
+]);

@@ -59,7 +59,7 @@ const accept = ({ topic }, body) => {
   return lines.join('\n\n');
 };
 
-const build = ({ peek, perform }) => goal(  
+const build = ({ peek, perform }) => goal(
   `Write a script for a new topic.`,
   [`Your goal is to use the script command to propose a script for a comic with a new topic.`],
   peek,
@@ -77,7 +77,7 @@ const build = ({ peek, perform }) => goal(
   )
 );
 
-const author = () => build(watch(accept));
+const author = (options, home) => build(watch(accept));
 
 export default author;
 
