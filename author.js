@@ -67,6 +67,8 @@ const accept = home => ({ topic }, body) => {
 
 const build = ({ peek, perform }, home) => goal(
   [
+    'Use the following previous scripts for reference:',
+    ...(home.topics().map(topic => home.script(topic))),
     'Write a script for a new topic.',
     'Please avoid reusing any pre-existing topic from the list:',
     home.drafts().map(topic => `* ${topic}`).join('\n')

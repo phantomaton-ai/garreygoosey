@@ -1,7 +1,7 @@
 import goal from './goal.js';
 import introduce from './introduce.js';
 
-const PREFIX = `Remember Garrey Goosey's character design and comic aesthetics:
+const PREAMBLE = `Remember Garrey Goosey's character design and comic aesthetics:
 
 * Drawn on wrinkled lined notebook paper
 * Drawn with a blue ballpoint pen
@@ -13,9 +13,7 @@ const PREFIX = `Remember Garrey Goosey's character design and comic aesthetics:
 * Jagged teeth like saw blades in his beak
 * Wide, wild bloodshot eyes
 
-Importantly, the only use of red in the image being the veins of those eyes! Everything else is drawn with blue pen.
-
-`;
+Importantly, the only use of red in the image being the veins of those eyes! Everything else is drawn with blue pen.`;
 
 const suggestions = [
   'Good, now use red ballpoint pen to emphasize the veins in Garrey Goosey\'s bloodshot eyes.',
@@ -38,7 +36,12 @@ const output = conversation => maybe(conversation.turns.flatMap(
 
 const sketch = ({ topic, panel }, home) => goal(
   introduce(
-    `${PREFIX}Draw panel ${panel} of the following comic:\n\n${home.script(topic)}`,
+    [
+      PREAMBLE,
+      `Draw panel ${panel} of the following comic:`,
+      home.script(topic)
+    ].join('\n\n'),
+    home,
     home.images(topic).filter((b, i) => panel > (i + 1))
   ),
   suggestions,

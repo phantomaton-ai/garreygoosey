@@ -15,7 +15,7 @@ const sources = [
   'carousel-3.png'
 ].map(filename => path.join(dirname, filename));
 
-const introduce = (instruction, panels) => [
+const introduce = (instruction, home, panels) => [
   { text: fs.readFileSync('garreygoosey.md', 'utf-8') },
   { text: "Example images are attached for your reference" },
   ...([...sources].map(source => ({
@@ -24,6 +24,15 @@ const introduce = (instruction, panels) => [
       data: fs.readFileSync(source).toString('base64')
     }
   }))),
+  ...(home.topics().slice(0, 3).flatMap(topic => [
+    { text: home.script(topic) },
+    ...(home.images(topic).map((buffer, i) => ({
+      inlineData: {
+        mimeType: 'image/png',
+        data: buffer.toString('base64')
+      }      
+    })))
+  ])),
   ...(panels.flatMap((buffer, i) => ([{
     text: `Panel ${i + 1} of the current comic:`
   }, {
