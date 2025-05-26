@@ -24,7 +24,7 @@ const introduce = (instruction, home, panels) => [
       data: fs.readFileSync(source).toString('base64')
     }
   }))),
-  ...(home.topics().slice(0, 3).flatMap(topic => [
+  ...(home.sample(3).flatMap(topic => [
     { text: home.script(topic) },
     ...(home.images(topic).map((buffer, i) => ({
       inlineData: {

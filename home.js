@@ -51,6 +51,13 @@ class Home {
     const text = fs.readFileSync(file, 'utf-8');
     return text.split('\n').map(t => t.trim()).filter(t => t.length > 0);
   }
+
+  sample(count) {
+    const topics = this.topics();
+    const shuffle = topics.map(topic => ({ topic, sort: Math.random() }));
+    const shuffled = shuffle.sort((a, b) => a.sort - b.sort);
+    return shuffled.slice(0, count).map(({ topic }) => topic);
+  }
 }
 
 export default root => new Home(root);
