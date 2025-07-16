@@ -27,7 +27,7 @@ export default (options) => phantomaton(
         model: 'gemini-2.0-flash-preview-image-generation',
         systemless: true
       } : {
-        model: 'gemini-2.5-flash-preview-04-17'
+        model: 'gemini-2.5-flash'
       }
     }
   }
