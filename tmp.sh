@@ -60,11 +60,11 @@ node cli.js --home=../garreygoosey.com/comics folding 3
 # node cli.js --home=../garreygoosey.com/comics alarm 3
 # node cli.js --home=../garreygoosey.com/comics bowling 1
 # node cli.js --home=../garreygoosey.com/comics bowling 2
-node cli.js --home=../garreygoosey.com/comics bowling 3
+# node cli.js --home=../garreygoosey.com/comics bowling 3
 # node cli.js --home=../garreygoosey.com/comics whistle 1
 # node cli.js --home=../garreygoosey.com/comics whistle 2
 # node cli.js --home=../garreygoosey.com/comics whistle 3
-node cli.js --home=../garreygoosey.com/comics printer 1
+# node cli.js --home=../garreygoosey.com/comics printer 1
 # node cli.js --home=../garreygoosey.com/comics printer 2
 # node cli.js --home=../garreygoosey.com/comics printer 3
 
