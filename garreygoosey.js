@@ -1,11 +1,11 @@
 import fs from 'fs';
 import path from 'path';
-import phantomaton from 'phantomaton';
+import util from './util.js';
 import { fileURLToPath } from 'url';
 
 import plugin from './plugin.js';
 
-export default (options) => phantomaton(
+export default (options) => util.phantomaton(
   fs.readFileSync(path.join(
     path.dirname(fileURLToPath(import.meta.url)),
     'garreygoosey.md'
